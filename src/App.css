@@ -1,0 +1,94 @@
+.app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Canvas */
+.drawing-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Status Display */
+.status-display {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.status-item .label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.status-item .value {
+  font-weight: bold;
+}
+
+/* Guide Toggle Button */
+.guide-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  color: #00f0ff;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.guide-toggle:hover {
+  background: rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.guide-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .status-display {
+    top: 10px;
+    right: 10px;
+  }
+
+  .guide-toggle {
+    bottom: 10px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
